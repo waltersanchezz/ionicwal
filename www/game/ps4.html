@@ -1,0 +1,140 @@
+<ion-view view-title="INSCRIPCION PS4">
+
+<ion-content>
+	
+		<div class="bar bar-header">
+			<a href="#/ps3" class="button icon-left ion-chevron-left button-clear button-dark">Atras</a>
+			<a href="#/home" class="button icon-left ion-home button-clear button-dark">Principal</a>
+		</div>
+	<br><br>
+
+	<div class="list">
+
+	    <a class="item item-thumbnail-left" href="#/horizon">
+	      <img src="img/horizon.jpg">
+	      <h2>HORIZON</h2>
+	      <p>Accion-Aventura</p>
+	    </a>
+	</div>
+
+	<div class="list">
+
+	    <a class="item item-thumbnail-left" href="#/fifa">
+	      <img src="img/fifa.jpg">
+	      <h2>FIFA 17</h2>
+	      <p>Deporte</p>
+	    </a>
+	</div>
+
+	<div class="list">
+
+	    <a class="item item-thumbnail-left" href="#/assassin">
+	      <img src="img/assassin.jpg">
+	      <h2>ASSASSIN'S CREED SYNDICATE</h2>
+	      <p>Aventura</p>
+	    </a>
+
+	</div>
+
+
+
+
+	<div class="list">
+		
+
+	  	<label class="item ion-person item-input item-floating-label">
+	    <span class="input-label">NOMBRE COMPLETO</span>
+	    <input type="text" placeholder="Escriba su nombre completo"
+	    					ng-model="ps4.nombre"/>
+	  	</label>
+
+	  	<label class="item ion-ios-email item-input item-floating-label">
+	    <span class="input-label">CORREO ELECTRONICO</span>
+	    <input type="text" placeholder="Excriba su correo electronico"
+	    					ng-model="ps4.correo"/>
+	  	</label>
+
+
+	  	<label class="item ion-ios-game-controller-b item-input item-floating-label">
+	    <span class="input-label">TELEFONO</span>
+	    <input type="text" placeholder="Escriba su telefono"
+	    					ng-model="ps4.telefono"/>
+	  	</label>
+
+	  	<h4>Selecciona el juego de compra:</h4>
+	  	<div class="list">
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Selecciona juego
+		    </div>
+		    <select ng-model="ps4.compra">
+		      <option ng-value="HORIZON">HORIZON</option>
+		      <option ng-value="FIFA17">FIFA17</option>
+		      <option ng-value="ASSASSINCREED">ASSASSIN-CREED</option>
+		    </select>
+		  </label>
+
+		</div>
+
+
+		<h4>Selecciona el medio de pago:</h4>
+	  	<div class="list">
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Selecciona medio
+		    </div>
+		    <select ng-model="ps4.medio">
+		      <option ng-value="BANCOLOMBIA">BANCOLOMBIA</option>
+		      <option ng-value="BANCOOCCIDENTE">BANCOOCCIDENTE</option>
+		      <option ng-value="VIABALOTO">VIABALOTO</option>
+		    </select>
+		  </label>
+
+		</div>
+
+
+		<button class="button button-outline button-royal" ng-click="guardarPS4In()()">Aceptar</button>
+		<a href="#/verPs4"><button class="button button-outline button-royal">Ver Registros</button>
+		<br>
+
+		<a  class="item item-icon-left" 
+                href=""
+                style="color:red;"
+                ng-if="hayError == true">
+                <i class="icon ion-ios-information"></i>
+                {{textoError}}
+        </a>
+
+        <a  class="item item-icon-left" 
+                href=""
+                style= "color:green;"
+                ng-if="ConExito == true">
+                <i class="icon ion-checkmark-circled"></i>
+                {{textoExito}}
+        </a>
+        <br><br><br>
+
+		<div class="tabs tabs-icon-top" style="color:#8000FF">
+		  <a href="#/ps3" class="tab-item">
+		    <i class="icon ion-playstation"></i>
+		    PS3
+		  </a>
+
+		  <a href="#/ps4"  class="tab-item">
+		    <i class="icon ion-playstation"></i>
+		    PS4
+		  </a>
+
+		  <a href="#/comentarios" class="tab-item">
+		    <i class="icon ion-ios-compose"></i>
+		    Comentarios
+		  </a>
+
+		
+		</div>
+
+	</div>
+    </ion-content>
+</ion-view>

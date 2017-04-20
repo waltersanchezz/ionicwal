@@ -1,0 +1,65 @@
+<ion-view view-title="Registro de Comentarios">
+
+	<ion-content>
+
+		<div class="bar bar-header">
+			<a href="#/comentarios" class="button icon-left ion-chevron-left button-clear button-dark">Atras</a>
+			<a href="#/home" class="button icon-left ion-home button-clear button-dark">Principal</a>
+		</div>
+
+
+
+
+
+		<br><br>
+		<br>
+
+
+		<div class="list">
+
+          
+		<label class="item item-input">
+	    <span class="input-label">NOMBRE DE BUSQUEDA:</span>
+	    <input type="text" placeholder="Escriba el nombre"
+	    					ng-model="busquedaComentario.ComentarioABuscar"/>
+	  	</label>
+
+		  <br>
+		  
+			  <div align="center">
+			  <a class="button button-outline icon-right ion-ios-search-strong button-royal"
+			  ng-click="buscarComentario()">
+			  Buscar Nombre
+			  </a>
+			  </div>
+
+        </div>
+
+	           <div class="list">
+	           	<a class="item item-icon-left" 
+	           		ng-repeat="comentar in arregloComentario"
+	                ng-click="verComentario(comentar)"
+	                href="javascript:void(0);">
+					<i class="icon ion-ios-paper-outline"></i>
+					Nombre: {{comentar.nombre}}<br>
+					Correo: {{comentar.correo}}
+				</a>	    
+	           </div>
+			
+			<div class="list"
+			ng-if="ComentarioSeleccionado != null">
+
+			    <a class="item item-avatar">
+			      <img src="img/informacion.jpg">
+			      <h2>Nombre: {{ComentarioSeleccionado.nombre}}</h2>
+			      <p>Correo: {{ComentarioSeleccionado.correo}}</p>
+			      <p>Comentario:</p>
+				  <div class="item item-text-wrap">
+					{{ComentarioSeleccionado.comentario}}
+				  </div>
+			    </a>
+			</div>
+
+
+	</ion-content>
+</ion-view>

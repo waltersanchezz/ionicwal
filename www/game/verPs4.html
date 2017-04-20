@@ -1,0 +1,65 @@
+<ion-view view-title="Registros PS4">
+
+	<ion-content>
+
+		<div class="bar bar-header">
+			<a href="#/ps4" class="button icon-left ion-chevron-left button-clear button-dark">Atras</a>
+			<a href="#/home" class="button icon-left ion-home button-clear button-dark">Principal</a>
+		</div>
+		<br><br>
+		<br>
+
+
+		<div class="list">
+
+          <label class="item item-input item-select">
+		    <div class="input-label">
+		      Selecciona el medio<br> de pago:
+		    </div>
+		    <select ng-model="busquedaPs4.MedioABuscar">
+		      <option ng-value="BANCOLOMBIA">BANCOLOMBIA</option>
+		      <option ng-value="BANCOOCCIDENTE">BANCOOCCIDENTE</option>
+		      <option ng-value="VIABALOTO">VIABALOTO</option>
+		    </select>
+		  </label>
+		  <br>
+		  
+			  <div align="center">
+			  <a class="button button-outline icon-right ion-ios-search-strong button-royal"
+			  ng-click="buscarMedio()">
+			  Buscar Medio de Pago
+			  </a>
+			  </div>
+
+        </div>
+
+
+
+	           <div class="list">
+	           	<a class="item item-icon-left" 
+	           		ng-repeat="ps4 in arregloPS4"
+	                ng-click="verMedio(ps4)"
+	                href="javascript:void(0);">
+					<i class="icon ion-ios-paper-outline"></i>
+					Nombre: {{ps3.nombre}}<br>
+					Correo: {{ps3.correo}}
+					<span class="item-note">
+					Medio:  {{ps3.medio}}
+					</span>
+				</a>	    
+	           </div>
+			
+			<div class="list"
+			ng-if="MedioSeleccionado != null">
+
+			    <a class="item item-avatar">
+			      <img src="img/informacion.jpg">
+			      <h2>Nombre: {{MedioSeleccionado.nombre}}</h2>
+			      <p>Tipo de juego: {{MedioSeleccionado.compra}}</p>
+			      <p>Telefono: {{MedioSeleccionado.telefono}}</p>
+			    </a>
+			</div>
+
+
+	</ion-content>
+</ion-view>

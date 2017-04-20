@@ -1,0 +1,76 @@
+<ion-view view-title="COMENTARIOS">
+
+<ion-content>
+
+	<div class="bar bar-header">
+		<a href="#/ps4" class="button icon-left ion-chevron-left button-clear button-dark">Atras</a>
+		<a href="#/home" class="button icon-left ion-home button-clear button-dark">Principal</a>
+	</div>	
+	<br><br>
+	
+
+	<div class="list">
+	
+	<div align="center">
+	<img src="img/logo.jpg" width="250" height="100">
+	<img src="img/logo3.jpg" width="250" height="100">
+	</div>
+
+
+	  	<label class="item ion-person item-input item-floating-label">
+	    <span class="input-label">NOMBRE COMPLETO</span>
+	    <input type="text" placeholder="Escriba su nombre completo"
+	    					ng-model="comentar.nombre"/>
+	  	</label>
+
+	  	<label class="item ion-ios-email item-input item-floating-label">
+	    <span class="input-label">CORREO ELECTRONICO</span>
+	    <input type="text" placeholder="Excriba su correo electronico"
+	    					ng-model="comentar.correo"/>
+	  	</label>
+	  	<br>
+
+	  
+	  
+		<label class="royal"><p> ESCRIBE TU COMENTARIO :</p></label>
+	<label class="item ion-compose item-input">
+    	<textarea placeholder="Escribe tu Comentario"
+    				ng-model="comentar.comentario"></textarea>
+  	</label>
+	<br><br><br>
+
+		<button class="button button-outline button-royal" ng-click="guardarComentarios()">Aceptar</button>
+		<a href="#/VerComentarios"><button class="button button-outline button-royal">Ver Comentarios</button>
+		<br>
+
+		<a  class="item item-icon-left" 
+                href=""
+                style="color:red;"
+                ng-if="hayError == true">
+                <i class="icon ion-ios-information"></i>
+                {{textoError}}
+        </a>
+       <br><br><br>
+	
+	 <div class="tabs tabs-icon-top" style="color:#8000FF">
+		  <a href="#/ps3" class="tab-item">
+		    <i class="icon ion-playstation"></i>
+		    PS3
+		  </a>
+
+		  <a href="#/ps4"  class="tab-item">
+		    <i class="icon ion-playstation"></i>
+		    PS4
+		  </a>
+
+		  <a href="#/comentarios" class="tab-item">
+		    <i class="icon ion-ios-compose"></i>
+		    Comentarios
+		  </a>
+
+		</div>
+	</div>
+	
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,141 @@
+<ion-view view-title="INSCRIPCION PS3">
+
+<ion-content>
+
+		<div class="bar bar-header">
+			<a href="#/home" class="button icon-left ion-home button-clear button-dark">Principal</a>
+			<a href="#/ps4" class="button icon-left ion-chevron-right button-clear button-dark">Adelante</a>
+			
+		</div>
+	<br><br>
+
+	<div class="list">
+
+	    <a class="item item-thumbnail-left" href="#/splinter">
+	      <img src="img/cell.jpg">
+	      <h2>SPLINTER CELL</h2>
+	      <p>Accion-Estrategia</p>
+	    </a>
+	</div>
+
+	<div class="list">
+
+	    <a class="item item-thumbnail-left" href="#/mortal">
+	      <img src="img/kombat.jpg">
+	      <h2>MORTAL KOMMBAT</h2>
+	      <p>Lucha</p>
+	    </a>
+	</div>
+
+	<div class="list">
+
+	    <a class="item item-thumbnail-left" href="#/gta5">
+	      <img src="img/gta5.jpg">
+	      <h2>GTA 5</h2>
+	      <p>Acción-Aventura</p>
+	    </a>
+
+	</div>
+
+
+
+	<div class="list">
+		
+
+	  	<label class="item ion-person item-input item-floating-label">
+	    <span class="input-label">NOMBRE COMPLETO</span>
+	    <input type="text" placeholder="Escriba su nombre completo"
+	    					ng-model="ps3.nombre"/>
+	  	</label>
+
+	  	<label class="item ion-ios-email item-input item-floating-label">
+	    <span class="input-label">CORREO ELECTRONICO</span>
+	    <input type="text" placeholder="Excriba su correo electronico"
+	    					ng-model="ps3.correo"/>
+	  	</label>
+
+
+	  	<label class="item ion-ios-game-controller-b item-input item-floating-label">
+	    <span class="input-label">TELEFONO</span>
+	    <input type="text" placeholder="Escriba su telefono"
+	    					ng-model="ps3.telefono"/>
+	  	</label>
+
+	  	<h4>Selecciona el juego de compra:</h4>
+	  	<div class="list">
+
+		  <label class="item item-input item-select">
+		    <div class="input-label" >
+		      Selecciona juego
+		    </div>
+		    <select ng-model="ps3.compra">
+		      <option ng-value="SPLINTERCELL">SPLINTERCELL</option>
+		      <option ng-value="MORTALKOMBAT">MORTALKOMBAT</option>
+		      <option ng-value="GTA5">GTA5</option>
+		    </select>
+		  </label>
+
+		</div>
+
+
+		<h4>Selecciona el medio de pago:</h4>
+	  	<div class="list">
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Selecciona medio
+		    </div>
+		    <select ng-model="ps3.medio">
+		      <option ng-value="BANCOLOMBIA">BANCOLOMBIA</option>
+		      <option ng-value="BANCOOCCIDENTE">BANCOOCCIDENTE</option>
+		      <option ng-value="VIABALOTO">VIABALOTO</option>
+		    </select>
+		  </label>
+
+		</div>
+
+		<br>
+
+		<button class="button button-outline button-royal" ng-click="guardarPS3In()">Aceptar</button>
+		<a href="#/verPs3"><button class="button button-outline button-royal">Ver Registros</button>
+		<br>
+
+		<a  class="item item-icon-left" 
+                href=""
+                style="color:red;"
+                ng-if="hayError == true">
+                <i class="icon ion-ios-information"></i>
+                {{textoError}}
+        </a>
+
+        <a  class="item item-icon-left" 
+                href=""
+                style= "color:green;"
+                ng-if="ConExito == true">
+                <i class="icon ion-checkmark-circled"></i>
+                {{textoExito}}
+        </a>
+        <br><br><br>
+
+		<div class="tabs tabs-icon-top" style="color:#8000FF">
+		  <a href="#/ps3" class="tab-item">
+		    <i class="icon ion-playstation"></i>
+		    PS3
+		  </a>
+
+		  <a href="#/ps4"  class="tab-item">
+		    <i class="icon ion-playstation"></i>
+		    PS4
+		  </a>
+
+		  <a href="#/comentarios" class="tab-item">
+		    <i class="icon ion-ios-compose"></i>
+		    Comentarios
+		  </a>
+
+		
+		</div>
+
+	</div>
+    </ion-content>
+</ion-view>

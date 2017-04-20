@@ -1,0 +1,65 @@
+<ion-view view-title="Registros">
+
+	<ion-content>
+
+		<div class="bar bar-header">
+			<a href="#/ps3" class="button icon-left ion-chevron-left button-clear button-dark">Atras</a>
+			<a href="#/home" class="button icon-left ion-home button-clear button-dark">Principal</a>
+		</div>
+		<br><br>
+		<br>
+
+
+		<div class="list">
+
+          <label class="item item-input item-select">
+		    <div class="input-label">
+		      Selecciona una juego
+		    </div>
+		    <select ng-model="busquedaPs3.JuegoABuscar">
+		      <option ng-value="SPLINTERCELL">SPLINTERCELL</option>
+		      <option ng-value="MORTALKOMBAT">MORTALKOMBAT</option>
+		      <option ng-value="GTA5">GTA5</option>
+		    </select>
+		  </label>
+		  <br>
+		  
+			  <div align="center">
+			  <a class="button button-outline icon-right ion-ios-search-strong button-royal"
+			  ng-click="buscarJuego()">
+			  Buscar Juego
+			  </a>
+			  </div>
+
+        </div>
+
+
+
+	           <div class="list">
+	           	<a class="item item-icon-left" 
+	           		ng-repeat="ps3 in arregloPS3"
+	                ng-click="verJuego(ps3)"
+	                href="javascript:void(0);">
+					<i class="icon ion-ios-paper-outline"></i>
+					Nombre: {{ps3.nombre}}<br>
+					Correo: {{ps3.correo}}
+					<span class="item-note">
+					Juego:  {{ps3.compra}}
+					</span>
+				</a>	    
+	           </div>
+			
+			<div class="list"
+			ng-if="JuegoSeleccionado != null">
+
+			    <a class="item item-avatar">
+			      <img src="img/informacion.jpg">
+			      <h2>Nombre: {{JuegoSeleccionado.nombre}}</h2>
+			      <p>Medio de pago: {{JuegoSeleccionado.medio}}</p>
+			      <p>Telefono: {{JuegoSeleccionado.telefono}}</p>
+			    </a>
+			</div>
+
+
+	</ion-content>
+</ion-view>
